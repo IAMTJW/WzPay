@@ -14,6 +14,7 @@
         <module>wz-pay-admin</module>
         <module>wz-aggre-pay-service</module>
         <module>wz-pay-order</module>
+        <module>wz-pay-common</module>
     </modules>
 
     <properties>
