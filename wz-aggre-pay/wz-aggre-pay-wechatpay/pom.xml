@@ -11,5 +11,14 @@
 
     <artifactId>com.aggre.pay.wechatpay</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.github.wxpay</groupId>
+            <artifactId>wxpay-sdk</artifactId>
+        </dependency>
+
+
+    </dependencies>
 
 </project>
