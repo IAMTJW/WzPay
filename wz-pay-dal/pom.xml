@@ -14,8 +14,12 @@
     <dependencies>
 
         <dependency>
-        <groupId>com.baomidou</groupId>
-        <artifactId>mybatis-plus</artifactId>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
     </dependencies>
