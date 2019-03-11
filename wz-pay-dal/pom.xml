@@ -11,5 +11,13 @@
 
     <artifactId>com.wz.pay.dal</artifactId>
 
+    <dependencies>
+
+        <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>
