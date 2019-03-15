@@ -11,5 +11,19 @@
 
     <artifactId>wz.aggre.pay.service.springcloud.server</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

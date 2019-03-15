@@ -1,0 +1,13 @@
+server:
+  port: 1000
+
+spring:
+  application:
+    name: config-server
+
+eureka:
+  instance:
+    hostname: locahost
+  client:
+    fetch-registry: false
+    register-with-eureka: false
