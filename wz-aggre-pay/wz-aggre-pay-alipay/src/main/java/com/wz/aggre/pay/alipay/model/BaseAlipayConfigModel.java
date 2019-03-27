@@ -12,7 +12,7 @@ import java.io.Serializable;
  */
 
 @Data
-public class BaseAlipayConfig implements Serializable {
+public class BaseAlipayConfigModel implements Serializable {
 
 
     // 商户appid
@@ -31,15 +31,15 @@ public class BaseAlipayConfig implements Serializable {
     private String url = "https://openapi.alipay.com/gateway.do";
 
     // 编码
-    public static String CHARSET = "UTF-8";
+    private  String charset = "UTF-8";
 
     // 返回格式
-    public static String FORMAT = "json";
+    private   String format = "json";
 
     // 支付宝公钥
-    public String alipay_public_key;
+    private String alipay_public_key;
 
     // RSA2
-    public static String SIGNTYPE = "RSA2";
+    private  String signType = "RSA2";
 
 }

@@ -34,6 +34,18 @@
     <dependencyManagement>
         <dependencies>
 
+            <!--WzPay-->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>com.aggre.pay.alipay</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <!--WzPay-->
+
+
+
             <dependency>
                 <groupId>com.alipay.sdk</groupId>
                 <artifactId>alipay-sdk-java</artifactId>
@@ -105,6 +117,19 @@
                 <version>1.18.0</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>4.3.22.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>4.3.22.RELEASE</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

@@ -11,7 +11,7 @@ import lombok.Data;
  */
 
 @Data
-public class RefundQueryModel extends BaseAlipayConfig{
+public class RefundQueryModel extends BaseAlipayConfigModel {
 
     /**
      *支付宝交易号，和商户订单号不能同时为空

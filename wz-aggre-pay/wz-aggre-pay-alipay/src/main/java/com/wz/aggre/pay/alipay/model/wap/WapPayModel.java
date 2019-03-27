@@ -1,6 +1,6 @@
 package com.wz.aggre.pay.alipay.model.wap;
 
-import com.wz.aggre.pay.alipay.model.BaseAlipayConfig;
+import com.wz.aggre.pay.alipay.model.BaseAlipayConfigModel;
 import com.wz.aggre.pay.alipay.model.ext.ExtUserInfo;
 import com.wz.aggre.pay.alipay.model.ext.ExtendParams;
 import lombok.Data;
@@ -16,7 +16,7 @@ import java.util.Date;
  */
 
 @Data
-public class WapPayModel extends BaseAlipayConfig {
+public class WapPayModel extends BaseAlipayConfigModel {
 
     /**
      * 可选 对一笔交易的具体描述信息。如果是多种商品，请将商品描述字符串累加传给body。
