@@ -2,7 +2,7 @@ package com.wz.aggre.pay.alipay.service;
 
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
-import com.wz.aggre.pay.alipay.model.BaseAlipayConfigModel;
+import com.wz.aggre.pay.alipay.model.*;
 import com.wz.aggre.pay.alipay.model.app.AppPayModel;
 import com.wz.aggre.pay.alipay.model.pc.PcPayModel;
 import com.wz.aggre.pay.alipay.model.wap.WapPayModel;
@@ -42,37 +42,54 @@ public class AlipayServiceImpl implements AlipayService {
     }
 
     @Override
-    public String tradePrecreate() {
+    public String tradePrecreate(TradePrecreateModel tradePrecreateModel) {
+
+        AlipayClient alipayClient = getAlipayClient(tradePrecreateModel);
+
         return null;
     }
 
     @Override
-    public String tradeCreate() {
+    public String tradeCreate(TradeCreateModel tradeCreateModel) {
+
+        AlipayClient alipayClient = getAlipayClient(tradeCreateModel);
         return null;
     }
 
     @Override
-    public String tradePay() {
+    public String tradePay(TradePayModel tradePayModel) {
+
+        AlipayClient alipayClient = getAlipayClient(tradePayModel);
+
         return null;
     }
 
     @Override
-    public String tradeClose() {
+    public String tradeClose(TradeCloseModel tradeCloseModel) {
+
+        AlipayClient alipayClient = getAlipayClient(tradeCloseModel);
+
         return null;
     }
 
     @Override
-    public String tradeRefund() {
+    public String tradeRefund(TradeRefundModel tradeRefundModel) {
+
+        AlipayClient alipayClient = getAlipayClient(tradeRefundModel);
+
         return null;
     }
 
     @Override
-    public String tradeRefundQuery() {
+    public String tradeRefundQuery(RefundQueryModel refundQueryModel) {
+
+        AlipayClient alipayClient = getAlipayClient(refundQueryModel);
+
         return null;
     }
 
     @Override
-    public String orderSettle() {
+    public String orderSettle(OrderSettleModel orderSettleModel) {
         return null;
     }
 

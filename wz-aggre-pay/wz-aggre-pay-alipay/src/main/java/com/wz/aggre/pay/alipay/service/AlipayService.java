@@ -1,5 +1,6 @@
 package com.wz.aggre.pay.alipay.service;
 
+import com.wz.aggre.pay.alipay.model.*;
 import com.wz.aggre.pay.alipay.model.app.AppPayModel;
 import com.wz.aggre.pay.alipay.model.pc.PcPayModel;
 import com.wz.aggre.pay.alipay.model.wap.WapPayModel;
@@ -35,46 +36,46 @@ public interface AlipayService {
      * 交易预创建
      * @return
      */
-    String tradePrecreate();
+    String tradePrecreate(TradePrecreateModel tradePrecreateModel);
 
 
     /**
      * 交易创建
      * @return
      */
-    String tradeCreate();
+    String tradeCreate(TradeCreateModel tradeCreateModel);
 
 
     /**
      * 交易支付
      * @return
      */
-    String tradePay();
+    String tradePay(TradePayModel tradePayModel);
 
     /**
      * 未支付交易关闭
      * @return
      */
-    String tradeClose();
+    String tradeClose(TradeCloseModel tradeCloseModel);
 
 
     /**
      * 交易退款
      * @return
      */
-    String tradeRefund();
+    String tradeRefund(TradeRefundModel tradeRefundModel);
 
     /**
      * 退款查询
      * @return
      */
-    String tradeRefundQuery();
+    String tradeRefundQuery(RefundQueryModel refundQueryModel);
 
     /**
      *  收单交易结算
      * @return
      */
-    String orderSettle();
+    String orderSettle(OrderSettleModel orderSettleModel);
 
 
 
