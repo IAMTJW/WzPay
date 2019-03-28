@@ -78,5 +78,12 @@ public interface AlipayService {
     String orderSettle(OrderSettleModel orderSettleModel);
 
 
+    /**
+     * 交易查询
+     * @return
+     */
+    String tradeQuery(TradeQueryModel tradeQueryModel);
+
+
 
 }

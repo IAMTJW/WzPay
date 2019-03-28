@@ -1,9 +1,6 @@
 package com.wz.aggre.pay.alipay.model;
 
-import com.wz.aggre.pay.alipay.model.ext.GoodsDetail;
 import lombok.Data;
-
-import java.util.List;
 
 /**
  * @author tianjunwei

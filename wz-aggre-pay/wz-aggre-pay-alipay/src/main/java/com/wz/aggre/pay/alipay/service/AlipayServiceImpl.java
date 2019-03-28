@@ -28,15 +28,21 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(appPayModel);
         AlipayTradeAppPayRequest request = new AlipayTradeAppPayRequest();
-        request.setBizContent("");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", appPayModel.getOut_trade_no());
+        params.put("total_amount", appPayModel.getTotal_amount());
+        params.put("subject", appPayModel.getSubject());
+
+        request.setBizContent(JSON.toJSONString(params));
         try {
             AlipayTradeAppPayResponse response = alipayClient.pageExecute(request);
             if (response.isSuccess()) {
-               return response.getBody();
+                return response.getBody();
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -46,15 +52,25 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(wapPayModel);
         AlipayTradeWapPayRequest request = new AlipayTradeWapPayRequest();
-        request.setBizContent("");
+
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", wapPayModel.getOut_trade_no());
+        params.put("total_amount", wapPayModel.getTotal_amount());
+        params.put("subject", wapPayModel.getSubject());
+        params.put("product_code", "QUICK_WAP_WAY");
+        params.put("quit_url", wapPayModel.getQuit_url());
+
+        request.setBizContent(JSON.toJSONString(params));
+
         try {
-            AlipayTradeWapPayResponse  response = alipayClient.pageExecute(request);
+            AlipayTradeWapPayResponse response = alipayClient.pageExecute(request);
             if (response.isSuccess()) {
                 return response.getBody();
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -64,7 +80,15 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(pcPayModel);
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
-        request.setBizContent("");
+
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", pcPayModel.getOut_trade_no());
+        params.put("total_amount", pcPayModel.getTotal_amount());
+        params.put("subject", pcPayModel.getSubject());
+        params.put("goods_detail", JSON.toJSONString(pcPayModel.getGoods_detail()));
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayTradePagePayResponse response = alipayClient.pageExecute(request);
@@ -73,7 +97,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -83,7 +107,15 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(tradePrecreateModel);
         AlipayTradePrecreateRequest request = new AlipayTradePrecreateRequest();
-        request.setBizContent("");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", tradePrecreateModel.getOut_trade_no());
+        params.put("total_amount", tradePrecreateModel.getTotal_amount());
+        params.put("subject", tradePrecreateModel.getSubject());
+        params.put("goods_detail", JSON.toJSONString(tradePrecreateModel.getGoods_detail()));
+
+        request.setBizContent(JSON.toJSONString(params));
+
 
         try {
             AlipayTradePrecreateResponse response = alipayClient.execute(request);
@@ -92,7 +124,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -103,11 +135,11 @@ public class AlipayServiceImpl implements AlipayService {
         AlipayClient alipayClient = getAlipayClient(tradeCreateModel);
         AlipayTradeCreateRequest request = new AlipayTradeCreateRequest();
 
-        Map<String,Object> params = new HashMap<String,Object>();
-        params.put("out_trade_no",tradeCreateModel.getOut_trade_no());
-        params.put("total_amount",tradeCreateModel.getTotal_amount());
-        params.put("subject",tradeCreateModel.getSubject());
-        params.put("buyer_id",tradeCreateModel.getBuyer_id());
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", tradeCreateModel.getOut_trade_no());
+        params.put("total_amount", tradeCreateModel.getTotal_amount());
+        params.put("subject", tradeCreateModel.getSubject());
+        params.put("buyer_id", tradeCreateModel.getBuyer_id());
 
         request.setBizContent(JSON.toJSONString(params));
 
@@ -119,7 +151,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -131,13 +163,13 @@ public class AlipayServiceImpl implements AlipayService {
         AlipayTradePayRequest request = new AlipayTradePayRequest();
         request.setBizContent("");
 
-        Map<String,Object> params = new HashMap<String,Object>();
-        params.put("out_trade_no",tradePayModel.getOut_trade_no());
-        params.put("total_amount",tradePayModel.getTotal_amount());
-        params.put("subject",tradePayModel.getSubject());
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", tradePayModel.getOut_trade_no());
+        params.put("total_amount", tradePayModel.getTotal_amount());
+        params.put("subject", tradePayModel.getSubject());
 
-        params.put("scene",tradePayModel.getScene());
-        params.put("auth_code",tradePayModel.getAuth_code());
+        params.put("scene", tradePayModel.getScene());
+        params.put("auth_code", tradePayModel.getAuth_code());
 
         request.setBizContent(JSON.toJSONString(params));
 
@@ -148,7 +180,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -158,7 +190,12 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(tradeCloseModel);
         AlipayTradeCloseRequest request = new AlipayTradeCloseRequest();
-        request.setBizContent("");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", tradeCloseModel.getOut_trade_no());
+        params.put("trade_no", tradeCloseModel.getTrade_no());
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayTradeCloseResponse response = alipayClient.execute(request);
@@ -167,7 +204,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -177,8 +214,14 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(tradeRefundModel);
         AlipayTradeRefundRequest request = new AlipayTradeRefundRequest();
-        request.setBizContent("");
 
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", tradeRefundModel.getOut_trade_no());
+        params.put("trade_no", tradeRefundModel.getTrade_no());
+        params.put("refund_amount", tradeRefundModel.getRefund_amount());
+        params.put("out_request_no",tradeRefundModel.getOut_request_no());
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayTradeRefundResponse response = alipayClient.execute(request);
@@ -187,7 +230,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -197,7 +240,14 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(refundQueryModel);
         AlipayTradeFastpayRefundQueryRequest request = new AlipayTradeFastpayRefundQueryRequest();
-        request.setBizContent("");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", refundQueryModel.getOut_trade_no());
+        params.put("trade_no", refundQueryModel.getTrade_no());
+        params.put("out_request_no", refundQueryModel.getOut_request_no());
+
+        request.setBizContent(JSON.toJSONString(params));
+
         try {
             AlipayTradeFastpayRefundQueryResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
@@ -205,7 +255,7 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
@@ -215,7 +265,15 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(orderSettleModel);
         AlipayTradeOrderSettleRequest request = new AlipayTradeOrderSettleRequest();
-        request.setBizContent("");
+
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trade_no", orderSettleModel.getTrade_no());
+        params.put("out_request_no", orderSettleModel.getOut_request_no());
+
+        params.put("royalty_parameters",orderSettleModel.getRoyalty_parameters());
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayTradeOrderSettleResponse response = alipayClient.execute(request);
@@ -224,14 +282,39 @@ public class AlipayServiceImpl implements AlipayService {
             } else {
                 return response.getMsg();
             }
-        }catch (AlipayApiException ex){
+        } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
     }
 
-    public AlipayClient getAlipayClient(BaseAlipayConfigModel baseAlipayConfig){
-        AlipayClient alipayClient = new DefaultAlipayClient(baseAlipayConfig.getUrl(),baseAlipayConfig.getApp_id(),baseAlipayConfig.getRsa_private_key()
-                ,baseAlipayConfig.getFormat(),baseAlipayConfig.getCharset(),baseAlipayConfig.getAlipay_public_key(),baseAlipayConfig.getSignType());
+    @Override
+    public String tradeQuery(TradeQueryModel tradeQueryModel) {
+
+        AlipayClient alipayClient = getAlipayClient(tradeQueryModel);
+
+        AlipayTradeQueryRequest request = new AlipayTradeQueryRequest();
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("trade_no", tradeQueryModel.getTrade_no());
+        params.put("out_trade_no", tradeQueryModel.getOut_trade_no());
+
+        request.setBizContent(JSON.toJSONString(params));
+
+        try {
+            AlipayTradeQueryResponse response = alipayClient.execute(request);
+            if (response.isSuccess()) {
+                return response.getBody();
+            } else {
+                return response.getMsg();
+            }
+        } catch (AlipayApiException ex) {
+            throw new IllegalStateException(ex);
+        }
+    }
+
+    public AlipayClient getAlipayClient(BaseAlipayConfigModel baseAlipayConfig) {
+        AlipayClient alipayClient = new DefaultAlipayClient(baseAlipayConfig.getUrl(), baseAlipayConfig.getApp_id(), baseAlipayConfig.getRsa_private_key()
+                , baseAlipayConfig.getFormat(), baseAlipayConfig.getCharset(), baseAlipayConfig.getAlipay_public_key(), baseAlipayConfig.getSignType());
         return alipayClient;
     }
 

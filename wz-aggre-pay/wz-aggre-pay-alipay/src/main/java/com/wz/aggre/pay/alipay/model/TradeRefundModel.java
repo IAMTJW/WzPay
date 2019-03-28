@@ -28,6 +28,11 @@ public class TradeRefundModel extends BaseAlipayConfigModel {
      */
     private double refund_amount;
 
+    /**
+     * 必填 部分退款
+     */
+    private String out_request_no;
+
 
     /**
      * 退款原因
