@@ -20,7 +20,7 @@
         <module>wz-aggre-pay</module>
         <module>wz-pay-dal</module>
         <module>wz-pay-admin</module>
-        <module>wz-aggre-pay-service</module>
+        <module>wz-aggre-pay-core</module>
         <module>wz-pay-order</module>
         <module>wz-pay-common</module>
     </modules>
@@ -145,6 +145,14 @@
                 <artifactId>spring-test</artifactId>
                 <version>4.3.22.RELEASE</version>
             </dependency>
+
+
+            <dependency>
+                <groupId>xyz.downgoon</groupId>
+                <artifactId>snowflake</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

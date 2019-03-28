@@ -1,5 +1,6 @@
 package com.wz.aggre.pay.alipay.service;
 
+import com.alibaba.fastjson.JSON;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
@@ -10,6 +11,9 @@ import com.wz.aggre.pay.alipay.model.app.AppPayModel;
 import com.wz.aggre.pay.alipay.model.pc.PcPayModel;
 import com.wz.aggre.pay.alipay.model.wap.WapPayModel;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author tianjunwei
@@ -98,7 +102,16 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(tradeCreateModel);
         AlipayTradeCreateRequest request = new AlipayTradeCreateRequest();
-        request.setBizContent("");
+
+        Map<String,Object> params = new HashMap<String,Object>();
+        params.put("out_trade_no",tradeCreateModel.getOut_trade_no());
+        params.put("total_amount",tradeCreateModel.getTotal_amount());
+        params.put("subject",tradeCreateModel.getSubject());
+        params.put("buyer_id",tradeCreateModel.getBuyer_id());
+
+        request.setBizContent(JSON.toJSONString(params));
+
+
         try {
             AlipayTradeCreateResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
@@ -117,6 +130,16 @@ public class AlipayServiceImpl implements AlipayService {
         AlipayClient alipayClient = getAlipayClient(tradePayModel);
         AlipayTradePayRequest request = new AlipayTradePayRequest();
         request.setBizContent("");
+
+        Map<String,Object> params = new HashMap<String,Object>();
+        params.put("out_trade_no",tradePayModel.getOut_trade_no());
+        params.put("total_amount",tradePayModel.getTotal_amount());
+        params.put("subject",tradePayModel.getSubject());
+
+        params.put("scene",tradePayModel.getScene());
+        params.put("auth_code",tradePayModel.getAuth_code());
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayTradePayResponse response = alipayClient.execute(request);

@@ -46,6 +46,10 @@
             <artifactId>spring-test</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>xyz.downgoon</groupId>
+            <artifactId>snowflake</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -9,11 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.wz.aggre.pay.service</artifactId>
+    <artifactId>com.wz.aggre.pay.core</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>wz-aggre-pay-service-springcloud</module>
         <module>wz-aggre-pay-service-core</module>
+        <module>wz-aggre-pay-core-dal</module>
     </modules>
 
 

@@ -28,7 +28,7 @@ public class BaseAlipayConfigModel implements Serializable {
     private String return_url;
 
     // 请求网关地址
-    private String url = "https://openapi.alipay.com/gateway.do";
+    private String url ;
 
     // 编码
     private  String charset = "UTF-8";
