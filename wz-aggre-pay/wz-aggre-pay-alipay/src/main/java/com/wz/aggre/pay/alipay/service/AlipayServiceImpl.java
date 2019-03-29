@@ -112,7 +112,7 @@ public class AlipayServiceImpl implements AlipayService {
         params.put("out_trade_no", tradePrecreateModel.getOut_trade_no());
         params.put("total_amount", tradePrecreateModel.getTotal_amount());
         params.put("subject", tradePrecreateModel.getSubject());
-        params.put("goods_detail", JSON.toJSONString(tradePrecreateModel.getGoods_detail()));
+        params.put("goods_detail", tradePrecreateModel.getGoods_detail());
 
         request.setBizContent(JSON.toJSONString(params));
 

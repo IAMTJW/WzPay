@@ -14,8 +14,8 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.github.wxpay</groupId>
-            <artifactId>wxpay-sdk</artifactId>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
         </dependency>
 
 

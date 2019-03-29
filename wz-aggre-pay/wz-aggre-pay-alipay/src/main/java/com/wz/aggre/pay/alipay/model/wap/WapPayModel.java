@@ -46,7 +46,7 @@ public class WapPayModel extends BaseAlipayConfigModel {
     /**
      * 必选 订单总金额，单位为元，精确到小数点后两位，取值范围[0.01,100000000]
      */
-    private int total_amount;
+    private Double total_amount;
 
     /**
      * 可选 针对用户授权接口，获取用户相关数据时，用于标识用户授权关系

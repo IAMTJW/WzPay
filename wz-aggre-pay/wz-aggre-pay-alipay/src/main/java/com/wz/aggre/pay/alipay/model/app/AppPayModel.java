@@ -26,7 +26,7 @@ public class AppPayModel extends BaseAlipayConfigModel {
     /**
      * 可选 订单总金额，单位为元，精确到小数点后两位，取值范围[0.01,100000000]
      */
-    private String total_amount;
+    private Double total_amount;
 
     /**
      * 可选  销售产品码，商家和支付宝签约的产品码
