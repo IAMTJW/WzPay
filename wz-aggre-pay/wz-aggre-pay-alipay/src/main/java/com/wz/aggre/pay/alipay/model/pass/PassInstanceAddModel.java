@@ -33,4 +33,6 @@ public class PassInstanceAddModel extends BaseAlipayConfigModel {
      */
     private String recognition_info;
 
+    private String params;
+
 }

@@ -22,4 +22,6 @@ public class PassTemplateModel extends BaseAlipayConfigModel {
      */
     private String tpl_content;
 
+    private String params;
+
 }

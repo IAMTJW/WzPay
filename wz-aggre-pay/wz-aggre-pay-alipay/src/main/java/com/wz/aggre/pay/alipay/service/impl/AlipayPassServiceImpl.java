@@ -34,12 +34,7 @@ public class AlipayPassServiceImpl implements AlipayPassService {
         AlipayClient alipayClient = getAlipayClient(passTemplateModel);
         AlipayPassTemplateAddRequest request = new AlipayPassTemplateAddRequest();
 
-        Map<String, Object> params = new HashMap<String, Object>();
-
-        params.put("unique_id", passTemplateModel.getUnique_id());
-        params.put("tpl_content", passTemplateModel.getTpl_content());
-
-        request.setBizContent(JSON.toJSONString(params));
+        request.setBizContent(passTemplateModel.getParams());
         try {
             AlipayPassTemplateAddResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
@@ -63,7 +58,7 @@ public class AlipayPassServiceImpl implements AlipayPassService {
         params.put("unique_id", passTemplateModel.getUnique_id());
         params.put("tpl_content", passTemplateModel.getTpl_content());
 
-        request.setBizContent(JSON.toJSONString(params));
+        request.setBizContent(passTemplateModel.getParams());
         try {
             AlipayPassTemplateUpdateResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
@@ -91,7 +86,7 @@ public class AlipayPassServiceImpl implements AlipayPassService {
         params.put("recognition_info", passInstanceAddModel.getRecognition_type());
 
 
-        request.setBizContent(JSON.toJSONString(params));
+        request.setBizContent(passInstanceAddModel.getParams());
 
         try {
             AlipayPassInstanceAddResponse response = alipayClient.execute(request);
