@@ -1,5 +1,6 @@
 package com.wz.aggre.pay.alipay.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
@@ -15,6 +16,9 @@ import com.wz.aggre.pay.alipay.model.pass.PassTemplateModel;
 import com.wz.aggre.pay.alipay.service.AlipayPassService;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author tianjunwei
  * @date 2019/3/29 16:15
@@ -29,10 +33,13 @@ public class AlipayPassServiceImpl implements AlipayPassService {
 
         AlipayClient alipayClient = getAlipayClient(passTemplateModel);
         AlipayPassTemplateAddRequest request = new AlipayPassTemplateAddRequest();
-        request.setBizContent("{" +
-                "\"unique_id\":\"20140709150010\"," +
-                "\"tpl_content\":\"{\\\"logo\\\": \\\"\\\",\\\"strip\\\": null,\\\"icon\\\": null,\\\"content\\\": {}}\"" +
-                "  }");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+
+        params.put("unique_id", passTemplateModel.getUnique_id());
+        params.put("tpl_content", passTemplateModel.getTpl_content());
+
+        request.setBizContent(JSON.toJSONString(params));
         try {
             AlipayPassTemplateAddResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
@@ -51,11 +58,12 @@ public class AlipayPassServiceImpl implements AlipayPassService {
 
         AlipayClient alipayClient = getAlipayClient(passTemplateModel);
         AlipayPassTemplateUpdateRequest request = new AlipayPassTemplateUpdateRequest();
-        request.setBizContent("{" +
-                "\"tpl_id\":\"f038871a4b1151e8038bb9277c3d52e3\"," +
-                "\"tpl_content\":\"{\\\"logo\\\": \\\"\\\",\\\"strip\\\": null,\\\"icon\\\": null,\\\"content\\\": {}}\"" +
-                "  }");
+        Map<String, Object> params = new HashMap<String, Object>();
 
+        params.put("unique_id", passTemplateModel.getUnique_id());
+        params.put("tpl_content", passTemplateModel.getTpl_content());
+
+        request.setBizContent(JSON.toJSONString(params));
         try {
             AlipayPassTemplateUpdateResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
@@ -74,12 +82,16 @@ public class AlipayPassServiceImpl implements AlipayPassService {
 
         AlipayClient alipayClient = getAlipayClient(passInstanceAddModel);
         AlipayPassInstanceAddRequest request = new AlipayPassInstanceAddRequest();
-        request.setBizContent("{" +
-                "\"tpl_id\":\"f038871a4b1151e8038bb9277c3d52e3\"," +
-                "\"tpl_params\":\"{\\\"title\\\":\\\"券标题\\\",\\\"channelID\\\":\\\"xxx\\\",\\\"serialNumer\\\":\\\"xxxx\\\"}\"," +
-                "\"recognition_type\":\"1\"," +
-                "\"recognition_info\":\"{\\\"partner_id\\\":\\\"2088102114633762\\\",\\\"out_trade_no\\\":\\\"1234567\\\"}\"" +
-                "  }");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+
+        params.put("tpl_id", passInstanceAddModel.getTpl_id());
+        params.put("tpl_params", passInstanceAddModel.getTpl_params());
+        params.put("recognition_type", passInstanceAddModel.getRecognition_type());
+        params.put("recognition_info", passInstanceAddModel.getRecognition_type());
+
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayPassInstanceAddResponse response = alipayClient.execute(request);
@@ -100,14 +112,16 @@ public class AlipayPassServiceImpl implements AlipayPassService {
 
         AlipayClient alipayClient = getAlipayClient(passInstanceUpdateModel);
         AlipayPassInstanceUpdateRequest request = new AlipayPassInstanceUpdateRequest();
-        request.setBizContent("{" +
-                "\"serial_number\":\"209919213\"," +
-                "\"channel_id\":\"2088918273\"," +
-                "\"tpl_params\":\"{\\\"title\\\":\\\"券标题\\\",\\\"channelID\\\":\\\"xxx\\\",\\\"serialNumer\\\":\\\"xxxx\\\"}\"," +
-                "\"status\":\"USED\"," +
-                "\"verify_code\":\"8612231273\"," +
-                "\"verify_type\":\"wave\"" +
-                "  }");
+
+        Map<String, Object> params = new HashMap<String, Object>();
+
+        params.put("serial_number", passInstanceUpdateModel.getSerial_number());
+        params.put("channel_id", passInstanceUpdateModel.getChannel_id());
+        params.put("status", passInstanceUpdateModel.getStatus());
+        params.put("verify_code", passInstanceUpdateModel.getVerify_code());
+        params.put("verify_type", passInstanceUpdateModel.getVerify_type());
+
+        request.setBizContent(JSON.toJSONString(params));
 
         try {
             AlipayPassInstanceUpdateResponse response = alipayClient.execute(request);
