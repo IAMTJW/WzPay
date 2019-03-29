@@ -1,4 +1,4 @@
-package com.wz.aggre.pay.alipay.service;
+package com.wz.aggre.pay.alipay.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alipay.api.AlipayApiException;
@@ -10,6 +10,7 @@ import com.wz.aggre.pay.alipay.model.*;
 import com.wz.aggre.pay.alipay.model.app.AppPayModel;
 import com.wz.aggre.pay.alipay.model.pc.PcPayModel;
 import com.wz.aggre.pay.alipay.model.wap.WapPayModel;
+import com.wz.aggre.pay.alipay.service.AlipayService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
