@@ -121,9 +121,9 @@ public class AlipayServiceTest extends BaseTest {
     public void tradeCreate() {
 
         TradeCreateModel tradeCreateModel = new TradeCreateModel();
-        tradeCreateModel.setSubject("测试订单5");
-        tradeCreateModel.setOut_trade_no("344546345634dd60");
-        tradeCreateModel.setTotal_amount(100);
+        tradeCreateModel.setSubject("测试订单红包");
+        tradeCreateModel.setOut_trade_no("344546345634dd61");
+        tradeCreateModel.setTotal_amount(1);
         tradeCreateModel.setAlipay_public_key("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0hJsfeU324d8ef4Twmr1o2qI5Gx0I9dAg4b+0Dqyr8eXwUE/ymXwbedBwbol6FS/D6NlDBo9Im7kOa3wO9SW0EImhjkLKsNw9UNHgwgf2k0iUodEJ9b4HNQ9oclR6Nq8zLpBECEmcUNairkX3dMfc46eU8cRV9fkVA4Ma9OFuzGwcUKSAPC5nPrrGJ6Jccx0XYoSVQcvlQGj2JZu1v45UHU8TA2iTYDN61nZhZfMQwmKvvwO2/j9IzpVoaNCv3IpqpO7AXiFP8tBEBQm9XSMX5XfMXXaJhXTeu34oIumnq7zGYu4gfYemz7aAk8q4zUXl/B3/f/Lj/wOsHgloP7gxwIDAQAB");
         tradeCreateModel.setApp_id("2016092800613971");
         tradeCreateModel.setUrl("https://openapi.alipaydev.com/gateway.do");

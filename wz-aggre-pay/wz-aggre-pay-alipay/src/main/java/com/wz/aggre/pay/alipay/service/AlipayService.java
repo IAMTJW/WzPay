@@ -6,6 +6,9 @@ import com.wz.aggre.pay.alipay.model.pc.PcPayModel;
 import com.wz.aggre.pay.alipay.model.wap.WapPayModel;
 
 /**
+ *
+ * 支付相关接口
+ *
  * @author tianjunwei
  * @date 2019/3/27 15:40
  */

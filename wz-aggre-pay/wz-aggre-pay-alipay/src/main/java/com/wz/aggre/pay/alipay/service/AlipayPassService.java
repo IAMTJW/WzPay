@@ -5,6 +5,9 @@ import com.wz.aggre.pay.alipay.model.pass.PassInstanceUpdateModel;
 import com.wz.aggre.pay.alipay.model.pass.PassTemplateModel;
 
 /**
+ *
+ *  卡券相关接口
+ *
  * @author tianjunwei
  * @date 2019/3/29 15:47
  */

@@ -1,6 +1,5 @@
 package wz.aggre.pay.service.springcloud.service.test.alipay;
 
-import com.alibaba.fastjson.JSON;
 import com.wz.aggre.pay.alipay.model.pass.PassInstanceAddModel;
 import com.wz.aggre.pay.alipay.model.pass.PassInstanceUpdateModel;
 import com.wz.aggre.pay.alipay.model.pass.PassTemplateModel;
@@ -9,8 +8,6 @@ import org.junit.Test;
 import wz.aggre.pay.service.springcloud.service.test.BaseTest;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**
