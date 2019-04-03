@@ -168,6 +168,7 @@ public class AlipayServiceImpl implements AlipayService {
         params.put("out_trade_no", tradePayModel.getOut_trade_no());
         params.put("total_amount", tradePayModel.getTotal_amount());
         params.put("subject", tradePayModel.getSubject());
+        params.put("body",tradePayModel.getBody());
 
         params.put("scene", tradePayModel.getScene());
         params.put("auth_code", tradePayModel.getAuth_code());
@@ -176,6 +177,31 @@ public class AlipayServiceImpl implements AlipayService {
 
         try {
             AlipayTradePayResponse response = alipayClient.execute(request);
+            if (response.isSuccess()) {
+                return response.getBody();
+            } else {
+                return response.getMsg();
+            }
+        } catch (AlipayApiException ex) {
+            throw new IllegalStateException(ex);
+        }
+    }
+
+
+    @Override
+    public String tradeCancel(TradeCancelModel tradeCancelModel) {
+        AlipayClient alipayClient = getAlipayClient(tradeCancelModel);
+
+        AlipayTradeCancelRequest request = new AlipayTradeCancelRequest();
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("out_trade_no", tradeCancelModel.getOut_trade_no());
+        params.put("trade_no", tradeCancelModel.getTrade_no());
+
+        request.setBizContent(JSON.toJSONString(params));
+
+        try {
+            AlipayTradeCancelResponse response = alipayClient.execute(request);
             if (response.isSuccess()) {
                 return response.getBody();
             } else {

@@ -44,7 +44,14 @@ public class TradePayModel extends BaseAlipayConfigModel {
     private String subject;
 
     /**
+     * 必填 订单描述
+     */
+    private String body;
+
+    /**
      * 可选 订单包含的商品列表信息，json格式，其它说明详见商品明细说明
      */
     private List<GoodsDetail> goods_detail;
+
+
 }
