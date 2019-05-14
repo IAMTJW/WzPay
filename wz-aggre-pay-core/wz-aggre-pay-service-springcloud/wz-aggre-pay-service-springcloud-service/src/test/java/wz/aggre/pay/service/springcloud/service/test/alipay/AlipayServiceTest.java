@@ -99,7 +99,7 @@ public class AlipayServiceTest extends BaseTest {
         TradePrecreateModel tradePrecreateModel = new TradePrecreateModel();
 
 
-        tradePrecreateModel.setTotal_amount(100.00);
+        tradePrecreateModel.setTotal_amount(20.00);
         tradePrecreateModel.setSubject("测试订单");
         tradePrecreateModel.setOut_trade_no("232323233");
 
@@ -122,7 +122,7 @@ public class AlipayServiceTest extends BaseTest {
 
         TradeCreateModel tradeCreateModel = new TradeCreateModel();
         tradeCreateModel.setSubject("测试订单红包");
-        tradeCreateModel.setOut_trade_no("344546345634dd61");
+        tradeCreateModel.setOut_trade_no("344546345634dd88");
         tradeCreateModel.setTotal_amount(1);
         tradeCreateModel.setAlipay_public_key("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0hJsfeU324d8ef4Twmr1o2qI5Gx0I9dAg4b+0Dqyr8eXwUE/ymXwbedBwbol6FS/D6NlDBo9Im7kOa3wO9SW0EImhjkLKsNw9UNHgwgf2k0iUodEJ9b4HNQ9oclR6Nq8zLpBECEmcUNairkX3dMfc46eU8cRV9fkVA4Ma9OFuzGwcUKSAPC5nPrrGJ6Jccx0XYoSVQcvlQGj2JZu1v45UHU8TA2iTYDN61nZhZfMQwmKvvwO2/j9IzpVoaNCv3IpqpO7AXiFP8tBEBQm9XSMX5XfMXXaJhXTeu34oIumnq7zGYu4gfYemz7aAk8q4zUXl/B3/f/Lj/wOsHgloP7gxwIDAQAB");
         tradeCreateModel.setApp_id("2016092800613971");
@@ -141,11 +141,11 @@ public class AlipayServiceTest extends BaseTest {
 
         TradePayModel tradeCreateModel = new TradePayModel();
         tradeCreateModel.setScene("bar_code");
-        tradeCreateModel.setAuth_code("288359590243835926");
+        tradeCreateModel.setAuth_code("285563367457556303");
         tradeCreateModel.setSubject("测试订单");
-        tradeCreateModel.setOut_trade_no("344546345634dd78");
+        tradeCreateModel.setOut_trade_no("344546345634dd723");
         tradeCreateModel.setBody("测试数据2");
-        tradeCreateModel.setTotal_amount(100);
+        tradeCreateModel.setTotal_amount(0.01);
         tradeCreateModel.setAlipay_public_key("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0hJsfeU324d8ef4Twmr1o2qI5Gx0I9dAg4b+0Dqyr8eXwUE/ymXwbedBwbol6FS/D6NlDBo9Im7kOa3wO9SW0EImhjkLKsNw9UNHgwgf2k0iUodEJ9b4HNQ9oclR6Nq8zLpBECEmcUNairkX3dMfc46eU8cRV9fkVA4Ma9OFuzGwcUKSAPC5nPrrGJ6Jccx0XYoSVQcvlQGj2JZu1v45UHU8TA2iTYDN61nZhZfMQwmKvvwO2/j9IzpVoaNCv3IpqpO7AXiFP8tBEBQm9XSMX5XfMXXaJhXTeu34oIumnq7zGYu4gfYemz7aAk8q4zUXl/B3/f/Lj/wOsHgloP7gxwIDAQAB");
         tradeCreateModel.setApp_id("2016092800613971");
         tradeCreateModel.setUrl("https://openapi.alipaydev.com/gateway.do");
@@ -179,7 +179,7 @@ public class AlipayServiceTest extends BaseTest {
     public void tradeClose() {
         TradeCloseModel tradeCloseModel = new TradeCloseModel();
 
-        tradeCloseModel.setOut_trade_no("344546345634dd59");
+        tradeCloseModel.setOut_trade_no("344546345634dd88");
 
         tradeCloseModel.setAlipay_public_key("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0hJsfeU324d8ef4Twmr1o2qI5Gx0I9dAg4b+0Dqyr8eXwUE/ymXwbedBwbol6FS/D6NlDBo9Im7kOa3wO9SW0EImhjkLKsNw9UNHgwgf2k0iUodEJ9b4HNQ9oclR6Nq8zLpBECEmcUNairkX3dMfc46eU8cRV9fkVA4Ma9OFuzGwcUKSAPC5nPrrGJ6Jccx0XYoSVQcvlQGj2JZu1v45UHU8TA2iTYDN61nZhZfMQwmKvvwO2/j9IzpVoaNCv3IpqpO7AXiFP8tBEBQm9XSMX5XfMXXaJhXTeu34oIumnq7zGYu4gfYemz7aAk8q4zUXl/B3/f/Lj/wOsHgloP7gxwIDAQAB");
         tradeCloseModel.setApp_id("2016092800613971");
@@ -251,7 +251,7 @@ public class AlipayServiceTest extends BaseTest {
 
         TradeQueryModel tradeQueryModel = new TradeQueryModel();
 
-        tradeQueryModel.setOut_trade_no("344546345634dd56");
+        tradeQueryModel.setOut_trade_no("232323233");
 
         tradeQueryModel.setAlipay_public_key("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0hJsfeU324d8ef4Twmr1o2qI5Gx0I9dAg4b+0Dqyr8eXwUE/ymXwbedBwbol6FS/D6NlDBo9Im7kOa3wO9SW0EImhjkLKsNw9UNHgwgf2k0iUodEJ9b4HNQ9oclR6Nq8zLpBECEmcUNairkX3dMfc46eU8cRV9fkVA4Ma9OFuzGwcUKSAPC5nPrrGJ6Jccx0XYoSVQcvlQGj2JZu1v45UHU8TA2iTYDN61nZhZfMQwmKvvwO2/j9IzpVoaNCv3IpqpO7AXiFP8tBEBQm9XSMX5XfMXXaJhXTeu34oIumnq7zGYu4gfYemz7aAk8q4zUXl/B3/f/Lj/wOsHgloP7gxwIDAQAB");
         tradeQueryModel.setApp_id("2016092800613971");

@@ -7,6 +7,8 @@ import com.alipay.api.request.*;
 import com.alipay.api.response.*;
 import com.wz.aggre.pay.alipay.model.BaseAlipayConfigModel;
 import com.wz.aggre.pay.alipay.model.MarketCashCreateModel;
+import com.wz.aggre.pay.alipay.model.pass.CashlessvoucherModel;
+import com.wz.aggre.pay.alipay.model.pass.SendCashlessvoucherModel;
 import com.wz.aggre.pay.alipay.service.AlipaymarketingService;
 import org.springframework.stereotype.Service;
 
@@ -108,6 +110,53 @@ public class AlipaymarketingServiceImpl implements AlipaymarketingService {
         } catch (AlipayApiException ex) {
             throw new IllegalStateException(ex);
         }
+    }
+
+
+    @Override
+    public String cashlessvoucherCreate(CashlessvoucherModel cashlessvoucherModel) {
+
+        AlipayClient alipayClient = getAlipayClient(cashlessvoucherModel);
+
+        AlipayMarketingCashlessvoucherTemplateCreateRequest request = new AlipayMarketingCashlessvoucherTemplateCreateRequest();
+
+        request.setBizContent(cashlessvoucherModel.getParams());
+        try {
+            AlipayMarketingCashlessvoucherTemplateCreateResponse response = alipayClient.execute(request);
+            if (response.isSuccess()) {
+                return response.getBody();
+            } else {
+                return response.getMsg();
+            }
+        } catch (AlipayApiException ex) {
+            throw new IllegalStateException(ex);
+        }
+    }
+
+    @Override
+    public String cashlessvoucherModify() {
+        return null;
+    }
+
+    @Override
+    public String voucherSend(SendCashlessvoucherModel sendCashlessvoucherModel) {
+
+        AlipayClient alipayClient = getAlipayClient(sendCashlessvoucherModel);
+
+        AlipayMarketingVoucherSendRequest request = new AlipayMarketingVoucherSendRequest();
+
+        request.setBizContent(sendCashlessvoucherModel.getParams());
+        try {
+            AlipayMarketingVoucherSendResponse response = alipayClient.execute(request);
+            if (response.isSuccess()) {
+                return response.getBody();
+            } else {
+                return response.getMsg();
+            }
+        } catch (AlipayApiException ex) {
+            throw new IllegalStateException(ex);
+        }
+
     }
 
     public AlipayClient getAlipayClient(BaseAlipayConfigModel baseAlipayConfig) {

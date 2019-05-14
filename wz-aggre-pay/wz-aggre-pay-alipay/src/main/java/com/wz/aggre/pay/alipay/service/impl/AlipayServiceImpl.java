@@ -162,8 +162,6 @@ public class AlipayServiceImpl implements AlipayService {
 
         AlipayClient alipayClient = getAlipayClient(tradePayModel);
         AlipayTradePayRequest request = new AlipayTradePayRequest();
-        request.setBizContent("");
-
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("out_trade_no", tradePayModel.getOut_trade_no());
         params.put("total_amount", tradePayModel.getTotal_amount());
